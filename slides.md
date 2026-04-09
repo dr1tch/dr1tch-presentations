@@ -4,13 +4,13 @@
 
 # Presentations
 
-- `decks/copilot.md` — Evercam Copilot (current)
+- `decks/copilot.md` — Evercam Copilot v2 (LangGraph migration)
+- `decks/langgraph.md` — LangGraph: From Zero to Production
 
 # Run A Deck
 
 - `pnpm dev:copilot`
-- `pnpm build:copilot`
-- `pnpm export:copilot`
+- `pnpm dev:langgraph`
 
 # Add A New Deck
 
