@@ -17,6 +17,9 @@
     "dev:langgraph": "slidev decks/langgraph.md --open",
     "build:langgraph": "slidev build decks/langgraph.md",
     "export:langgraph": "slidev export decks/langgraph.md",
+    "dev:copilot-qa": "slidev decks/copilot-qa.md --open",
+    "build:copilot-qa": "slidev build decks/copilot-qa.md",
+    "export:copilot-qa": "slidev export decks/copilot-qa.md",
     "build:all": "node scripts/build-all.mjs",
     "dev:index": "pnpm --filter presentations-index dev",
     "build:index": "pnpm --filter presentations-index build"
