@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply min-h-screen text-slate-100 antialiased;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(56, 189, 248, 0.25) 0%, rgba(56, 189, 248, 0) 60%),
+      radial-gradient(900px 500px at 85% 10%, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0) 55%),
+      #0b1020;
+    font-family: "Sora", ui-sans-serif, system-ui;
+  }
+}

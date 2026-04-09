@@ -8,7 +8,10 @@
     "export": "slidev export",
     "dev:copilot": "slidev decks/copilot.md --open",
     "build:copilot": "slidev build decks/copilot.md",
-    "export:copilot": "slidev export decks/copilot.md"
+    "export:copilot": "slidev export decks/copilot.md",
+    "build:all": "node scripts/build-all.mjs",
+    "dev:index": "pnpm --filter presentations-index dev",
+    "build:index": "pnpm --filter presentations-index build"
   },
   "dependencies": {
     "@slidev/cli": "^52.14.2",

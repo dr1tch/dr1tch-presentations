@@ -1,4 +1,4 @@
-# Slidev Decks
+# dr1tch-presentations
 
 To start a deck:
 
@@ -15,8 +15,13 @@ Add a new deck:
 
 The root `slides.md` is a small index and can be kept up to date with your deck list.
 
+# React Index (Tailwind v4)
+
+The index page is a React 19 app under `apps/index` and reads `dist/decks.json`.
+
+- `pnpm dev:index` runs the index app locally
+- `pnpm build:all` builds every deck and then builds the React index into `dist/`
+
 # GitHub Pages
 
-This repo includes a GitHub Pages workflow that builds the `copilot` deck and deploys `dist/`.
-
-If you change the deck name, update the workflow build step to match the new script.
+The workflow builds all decks and deploys `dist/`.

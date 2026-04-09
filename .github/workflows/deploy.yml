@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build
-        run: pnpm build:copilot -- --base /${{ github.event.repository.name }}/
+        run: BASE=/${{ github.event.repository.name }}/ pnpm build:all
       - name: Add .nojekyll
         run: touch dist/.nojekyll
       - name: Setup Pages
