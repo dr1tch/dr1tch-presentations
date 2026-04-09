@@ -22,6 +22,12 @@ The index page is a React 19 app under `apps/index` and reads `dist/decks.json`.
 - `pnpm dev:index` runs the index app locally
 - `pnpm build:all` builds every deck and then builds the React index into `dist/`
 
+# Code Quality
+
+- `pnpm lint`
+- `pnpm format`
+- `pnpm typecheck`
+
 # GitHub Pages
 
 The workflow builds all decks and deploys `dist/`.
