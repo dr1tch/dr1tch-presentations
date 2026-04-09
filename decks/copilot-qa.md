@@ -193,12 +193,12 @@ transition: slide-left
 
 <div v-click>
   <div class="text-orange-300 font-semibold text-sm mb-1">What is BM25?</div>
-  <div class="text-xs text-white/65 leading-relaxed">BM25 is a lexical relevance ranking algorithm (term frequency + inverse document frequency with length normalization). It scores how well each memory entry matches the query, then returns the top hits.</div>
+  <div class="text-xs text-white/65 leading-relaxed">In our current code we use a BM25-style lexical scorer (token overlap + recency + project/camera boosts), not a strict BM25 library implementation.</div>
 </div>
 
 <div v-click>
-  <div class="text-orange-300 font-semibold text-sm mb-1">Why BM25 over embeddings for memory?</div>
-  <div class="text-xs text-white/65 leading-relaxed">80 entries per session — embeddings add latency and cost for no real gain at this scale. BM25 runs in &lt;1ms in pure JS. Revisit at thousands of entries or when semantic similarity matters.</div>
+  <div class="text-orange-300 font-semibold text-sm mb-1">Why lexical scoring over embeddings for memory?</div>
+  <div class="text-xs text-white/65 leading-relaxed">At ~80 entries per session, lexical scoring is faster and cheaper with good precision; embeddings can be added later if memory size or semantic ambiguity grows.</div>
 </div>
 
 <div v-click>
@@ -467,6 +467,5 @@ class: text-center
     </div>
   </div>
 </div>
-
 
 
