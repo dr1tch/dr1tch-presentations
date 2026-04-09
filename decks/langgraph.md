@@ -436,8 +436,8 @@ transition: fade
 
 # Execution Flow — Full Picture
 
-```mermaid {scale: 0.78}
-flowchart TD
+```mermaid {scale: 0.5}
+flowchart LR
     INV(["graph.invoke(input, config)"]) --> LC["load checkpoint\nthread_id"]
     LC --> MRG["merge input\ninto state"]
     MRG --> RN["run next node"]

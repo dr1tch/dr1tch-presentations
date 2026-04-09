@@ -14,16 +14,32 @@ function formatName(name: string) {
 export default function App() {
   const [decks, setDecks] = useState<Deck[]>([])
   const [error, setError] = useState<string | null>(null)
+  const decksEndpoint = `${import.meta.env.BASE_URL}decks.json`
 
   useEffect(() => {
-    fetch("./decks.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load deck list")
-        return res.json()
-      })
-      .then((data) => setDecks(data))
-      .catch((err) => setError(err.message))
-  }, [])
+    const loadDecks = async () => {
+      try {
+        const res = await fetch(decksEndpoint)
+        if (!res.ok) {
+          throw new Error("Failed to load deck list")
+        }
+
+        const raw = await res.text()
+        let data: Deck[]
+        try {
+          data = JSON.parse(raw) as Deck[]
+        } catch {
+          throw new Error("Deck index endpoint returned non-JSON content")
+        }
+
+        setDecks(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to load deck list")
+      }
+    }
+
+    void loadDecks()
+  }, [decksEndpoint])
 
   const stats = useMemo(() => `${decks.length} decks`, [decks.length])
 
